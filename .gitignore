@@ -1,0 +1,21 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Data (download from Kaggle, never commit)
+data/raw/
+data/processed/
+
+# Outputs and model weights
+results/
+runs/
+*.pt
+*.pth
+
+# Local paths (each member keeps their own copy)
+configs/paths.yaml

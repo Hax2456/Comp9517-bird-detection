@@ -1,0 +1,12 @@
+# COMP9517 Bird Detection - local environment (Python 3.13)
+# Install: pip install -r requirements.txt
+
+numpy==2.5.4
+opencv-python==5.0.0.93
+scikit-image==0.26.0
+scikit-learn==1.9.1
+pycocotools==2.0.11
+matplotlib==3.11.2
+pandas==3.1.0
+pyyaml==6.0.3
+tqdm==4.70.1
