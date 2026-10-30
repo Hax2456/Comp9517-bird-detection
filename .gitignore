@@ -19,3 +19,6 @@ runs/
 
 # Local paths (each member keeps their own copy)
 configs/paths.yaml
+
+# Prediction files (regenerate with each method's detect script)
+preds/

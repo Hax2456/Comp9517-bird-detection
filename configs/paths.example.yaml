@@ -1,0 +1,2 @@
+# Relative paths are resolved from the repository root.
+data_root: "data/raw/Beach Bird Detection Dataset v1.0"

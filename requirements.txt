@@ -10,3 +10,4 @@ matplotlib==3.11.2
 pandas==3.1.0
 pyyaml==6.0.3
 tqdm==4.70.1
+pillow==13.0.0
