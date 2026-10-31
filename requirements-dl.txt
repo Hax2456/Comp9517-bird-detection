@@ -1,0 +1,4 @@
+# Deep learning dependencies (M3). Install on Colab or a machine with a GPU.
+ultralytics>=8.3
+torch
+torchvision
