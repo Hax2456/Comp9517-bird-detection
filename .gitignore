@@ -10,12 +10,14 @@ __pycache__/
 # Data (download from Kaggle, never commit)
 data/raw/
 data/processed/
+/Beach Bird Detection Dataset v1.0/
 
 # Outputs and model weights
 results/
 runs/
 *.pt
 *.pth
+*.joblib
 
 # Local paths (each member keeps their own copy)
 configs/paths.yaml

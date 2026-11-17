@@ -27,7 +27,7 @@ Comp9517-bird-detection/
 │   ├── make_coco_gt.py      # converts YOLO labels to COCO ground truth
 │   └── evaluate.py          # computes mAP for a prediction file
 ├── m1_classical/            # M1 non-learning methods (planned)
-├── m2_ml/                   # M2 traditional ML (planned)
+├── m2_ml/                   # M2 detector, explanatory notebook, report draft and checks
 ├── m3_dl/                   # M3 deep learning (planned)
 ├── analysis/                # density / size analysis, robustness, figures (planned)
 ├── data/                    # dataset and generated files (not committed)
@@ -113,9 +113,25 @@ Name prediction files `preds/{method}_{variant}_{split}.json`, for example `pred
 
 ```bash
 python -m m1_classical.detect --variant blob --split val
-python -m m2_ml.detect --features hog_color --split val
 python m3_dl/predict.py --weights <path/to/best.pt> --split val
 ```
+
+### M2: traditional machine learning
+
+The 17 November retry is documented in `m2_ml/M2_revision.ipynb` and
+`m2_ml/M2_revision_report.md`. It tests aligned dense HOG windows, expanded mining,
+box refinement and kernel-SVM reranking. Its accuracy results are mixed and its
+CPU implementation is substantially faster. The M3 comparison/code audit is in
+`m2_ml/M3_comparison_audit.md`; the screenshot scores are not locally reproduced.
+
+M2 now includes an executable walkthrough, detector, and section-by-section report
+contribution. See [`m2_ml/README.md`](m2_ml/README.md) for setup and saved-model inference.
+Install `requirements-m2.txt`, then open
+[`m2_ml/M2_walkthrough.ipynb`](m2_ml/M2_walkthrough.ipynb). The notebook compares
+HOG + linear SVM, HOG + HSV + linear SVM, and hard-negative retraining. The full
+experiment is run with `python -m m2_ml.run_full`; measured outputs are presented
+in `m2_ml/M2_full_results.ipynb` and the M2 report contributions. The brief/rubric
+mapping is in `m2_ml/M2_requirements_review.md`. Use the project `.venv` for M2.
 
 ## Team
 

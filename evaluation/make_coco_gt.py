@@ -21,8 +21,10 @@ def build_coco_gt(split: str) -> dict:
                 "id": ann_id,
                 "image_id": img_id,
                 "category_id": 1,
-                "bbox": [round(x, 2), round(y, 2), round(bw, 2), round(bh, 2)],
-                "area": round(bw * bh, 2),
+                # Preserve label precision, matching M2's subset-aware evaluator.
+                # Rounding can change IoU/area-boundary decisions near a cutoff.
+                "bbox": [x, y, bw, bh],
+                "area": bw * bh,
                 "iscrowd": 0,
             })
             ann_id += 1

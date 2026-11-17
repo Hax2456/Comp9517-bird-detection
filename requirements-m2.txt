@@ -1,0 +1,17 @@
+# Standalone M2 notebook environment: Python 3.10+.
+# This avoids installing the deep-learning dependencies.
+numpy>=1.24,<3
+pillow>=10,<14
+pyyaml>=6,<7
+scikit-image>=0.22,<0.27
+scikit-learn>=1.3,<2
+pycocotools>=2.0.7,<3
+joblib>=1.3,<2
+tqdm>=4.65,<5
+matplotlib>=3.7,<4
+pandas>=2,<4
+jupyterlab>=4,<5
+ipykernel>=6,<8
+nbformat>=5.9,<6
+nbclient>=0.9,<0.12
+threadpoolctl>=3.1,<4
