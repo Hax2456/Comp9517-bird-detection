@@ -26,9 +26,9 @@ Comp9517-bird-detection/
 ├── evaluation/
 │   ├── make_coco_gt.py      # converts YOLO labels to COCO ground truth
 │   └── evaluate.py          # computes mAP for a prediction file
-├── m1_classical/            # M1 non-learning methods (planned)
+├── m1_classical/            # M1 non-learning detector (threshold and LoG blob)
 ├── m2_ml/                   # M2 detector, explanatory notebook, report draft and checks
-├── m3_dl/                   # M3 deep learning (planned)
+├── m3_dl/                   # M3 training, inference, training logs and curves
 ├── analysis/                # density / size analysis, robustness, figures (planned)
 ├── data/                    # dataset and generated files (not committed)
 │   ├── raw/
@@ -113,7 +113,8 @@ Name prediction files `preds/{method}_{variant}_{split}.json`, for example `pred
 
 ```bash
 python -m m1_classical.detect --variant blob --split val
-python m3_dl/predict.py --weights <path/to/best.pt> --split val
+python -m m3_dl.train --run rtdetr_l
+python -m m3_dl.predict --weights runs/m3/rtdetr_l/weights/best.pt --split val --name m3_rtdetr_l
 ```
 
 ### M2: traditional machine learning
@@ -150,6 +151,6 @@ mapping is in `m2_ml/M2_requirements_review.md`. Use the project `.venv` for M2.
 | OpenCV, scikit-image | Image processing (M1) |
 | scikit-learn | SVM classifier (M2) |
 | pycocotools | COCO-style mAP evaluation |
-| PyTorch, Ultralytics *(planned)* | YOLO11 and RT-DETR training and inference (M3) |
+| PyTorch, Ultralytics | YOLO11 and RT-DETR training and inference (M3) |
 
 The dataset is used under the terms in its own `LICENSE.md`.
